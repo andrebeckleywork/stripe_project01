@@ -1,0 +1,27 @@
+{% extends "store/base.html" %}
+{% block title %}Django Shop{% endblock %}
+
+{% block content %}
+<div class="shop-header">
+    <h1>🛒 Django Shop</h1>
+    <p>Choose a product below to buy with Stripe</p>
+</div>
+
+<div class="grid">
+    {% for product in products %}
+    <div class="product-card">
+        <div class="emoji">{{ product.emoji }}</div>
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <div class="price">{{ product.price_display }}</div>
+        <form action="{% url 'create_checkout_session' product.id %}"
+              method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn">Buy Now</button>
+        </form>
+    </div>
+    {% empty %}
+        <p style="text-align:center;color:#777;">No products available.</p>
+    {% endfor %}
+</div>
+{% endblock %}

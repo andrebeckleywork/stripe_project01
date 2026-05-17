@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Django Shop{% endblock %}</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f4f6f9; color: #333;
+            min-height: 100vh; padding: 2rem;
+        }
+        h1 { color: #1a1a2e; margin-bottom: 0.5rem; }
+        p  { color: #555; line-height: 1.6; margin: 0.75rem 0; }
+        .shop-header { text-align: center; margin-bottom: 2rem; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.5rem; max-width: 900px; margin: 0 auto;
+        }
+        .product-card {
+            background: white; border-radius: 12px;
+            padding: 1.5rem; text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+        }
+        .product-card .emoji { font-size: 3rem; margin-bottom: 0.75rem; }
+        .product-card h2 { font-size: 1.1rem; color: #1a1a2e; }
+        .price { font-size: 1.5rem; font-weight: 700; color: #635bff; margin: 0.5rem 0 1rem; }
+        .card {
+            background: white; border-radius: 12px; padding: 2.5rem;
+            max-width: 480px; margin: 4rem auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;
+        }
+        .icon { font-size: 4rem; margin-bottom: 1rem; }
+        .detail { background: #f8f9fa; border-radius: 8px; padding: 1rem; margin: 1rem 0; text-align: left; }
+        .detail p { margin: 0.3rem 0; }
+        .btn {
+            display: inline-block; background: #635bff; color: white;
+            border: none; padding: 0.75rem 1.5rem; border-radius: 8px;
+            font-size: 0.95rem; cursor: pointer; text-decoration: none;
+            margin-top: 0.5rem; transition: background 0.2s; width: 100%;
+        }
+        .btn:hover { background: #4f46e5; }
+        .btn-secondary { background: #6c757d; }
+        .btn-secondary:hover { background: #5a6268; }
+    </style>
+</head>
+<body>{% block content %}{% endblock %}</body>
+</html>
